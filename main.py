@@ -20,6 +20,7 @@ def write_file(header, rows, file_name):
 
 def main():
     header, rows = read_file("country_full.csv")
+    name_index = header.index("name")
     region_index = header.index("region")
     if region_index == -1:
         print("The 'region' column was not found in the header.")
@@ -31,7 +32,7 @@ def main():
         region = region if region else "Unknown"
         if region not in groups:
             groups[region] = []
-        groups[region].append(row)
+        groups[region].append(country)
 
     for region, group_rows in groups.items():
         output_file_name = f"{region}.csv"
