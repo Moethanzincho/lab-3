@@ -36,7 +36,7 @@ def main():
 
     for region, group_rows in groups.items():
         output_file_name = f"{region}.csv"
-        write_file(header, group_rows, output_file_name)
+        write_file(["name", "region"], group_rows, output_file_name)
         print(f"Data for region '{region}' has been written to '{output_file_name}'.")
 
 if __name__ == "__main__":
