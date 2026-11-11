@@ -30,6 +30,7 @@ def main():
     for row in rows:
         region = row[region_index]
         region = region if region else "Unknown"
+        country = [row[name_index], region]
         if region not in groups:
             groups[region] = []
         groups[region].append(country)
